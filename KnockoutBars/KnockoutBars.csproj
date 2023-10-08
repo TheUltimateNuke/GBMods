@@ -21,10 +21,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="AssetBundles\" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\..\..\SteamLibrary\steamapps\common\Gang Beasts\Gang Beasts_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>

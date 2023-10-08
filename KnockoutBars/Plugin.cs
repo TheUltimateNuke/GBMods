@@ -14,13 +14,15 @@ namespace KnockoutBars
     {
         internal static ManualLogSource LogSource { get; private set; }
         internal static ConfigFile ModConfig { get; private set; }
-        internal static Dictionary<string, AssetBundleTest> AssetBundleRefs = new();
 
+        //internal static Dictionary<string, AssetBundleTest> AssetBundleRefs = new();
+        /*
         private static void AddToDict(AssetBundleTest assetBundleTest)
         {
             AssetBundleRefs.Add(assetBundleTest.AssetBundleIdentifier, assetBundleTest);
         }
-        
+        */
+
         private void Awake()
         {
             LogSource = Logger;
