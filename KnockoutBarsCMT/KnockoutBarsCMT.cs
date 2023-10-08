@@ -13,15 +13,13 @@ namespace KnockoutBarsCMT
 {
     public class KnockoutBarsCMT : CementMod
     {
-        private static  Queue<DelayedHookData> delayedHooks = new();
+        private Queue<DelayedHookData> delayedHooks = new();
 
         private void Awake()
         {
-            name = PluginInfo.PLUGIN_NAME;
-
             CreateHook(typeof(Actor).GetProperty(nameof(Actor.actorState), AccessTools.all).GetSetMethod(), typeof(KnockoutBarsCMT).GetMethod(nameof(Invoke_OnStateChanged), AccessTools.all));
 
-            Cement.Log($"Cement mod {name} loaded!");
+            Cement.Log($"Cement mod {modFile.GetString("Name")} loaded!");
         }
 
         private void Invoke_OnStateChanged(Actor __instance)
@@ -48,7 +46,7 @@ namespace KnockoutBarsCMT
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static void CreateHook(MethodInfo original, MethodInfo hook, bool isPrefix = false)
+        private void CreateHook(MethodInfo original, MethodInfo hook, bool isPrefix = false)
         {
             if (original == null)
             {
@@ -57,7 +55,7 @@ namespace KnockoutBarsCMT
             }
 
             Assembly callingAssembly = Assembly.GetCallingAssembly();
-            Harmony modHarmony = new(Assembly.GetExecutingAssembly().GetName().Name);
+            Harmony modHarmony = new(modFile.GetString("Name"));
 
             HarmonyMethod prefix = isPrefix ? new HarmonyMethod(hook) : null;
             HarmonyMethod postfix = isPrefix ? null : new HarmonyMethod(hook);
