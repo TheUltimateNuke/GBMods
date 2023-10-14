@@ -1,15 +1,11 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
-using GB.UI.Utils;
 using HarmonyLib;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-using System.Xml.Schema;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CementSummaryHider
 {
