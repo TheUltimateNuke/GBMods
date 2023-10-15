@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockoutBars", "KnockoutBar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockoutBarsCMT", "KnockoutBarsCMT\KnockoutBarsCMT.csproj", "{BBCA349F-30E4-41DD-9DB5-C05709342089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CementSummaryHider", "CementSummaryHider\CementSummaryHider.csproj", "{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CementSummaryHider", "CementSummaryHider\CementSummaryHider.csproj", "{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpawnEnemiesCMT-fix", "SpawnEnemiesCMT-fix\SpawnEnemiesCMT-fix.csproj", "{5F723B9D-1CAD-471E-91E9-EF3B8E7C1491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F723B9D-1CAD-471E-91E9-EF3B8E7C1491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F723B9D-1CAD-471E-91E9-EF3B8E7C1491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F723B9D-1CAD-471E-91E9-EF3B8E7C1491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F723B9D-1CAD-471E-91E9-EF3B8E7C1491}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
