@@ -1,8 +1,8 @@
 ﻿Name=SpawnEnemies
 Author=dotpy
 Message=Press i, o, or p to spawn a small, medium, and large enemy, respectively.
-Links=https://raw.githubusercontent.com/HueSamai/SpawnEnemies/master/SpawnEnemies.dll
-LatestVersion=https://raw.githubusercontent.com/HueSamai/SpawnEnemies/master/version
+Links=https://github.com/TheUltimateNuke/GBMods/raw/spawn-enemies-cmt-fix/SpawnEnemiesCMT-fix/build/SpawnEnemiesCMT_fix.dll
+LatestVersion=https://raw.githubusercontent.com/TheUltimateNuke/GBMods/spawn-enemies-cmt-fix/SpawnEnemiesCMT-fix/build/version
 [Editable][Keybind] KeybindSpawnSmall=i
 [Editable][Keybind] KeybindSpawnMedium=o
 [Editable][Keybind] KeybindSpawnLarge=p
