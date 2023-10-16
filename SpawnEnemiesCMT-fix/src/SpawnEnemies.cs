@@ -114,7 +114,7 @@ namespace SpawnEnemiesFixed
         public void SpawnEnemy(int type, Vector3 position)
         {
             Cement.Log("SPAWNING ENEMY");
-            bool flag = this.waveInformation != null;
+            bool flag = this.waveInformation == null;
             if (!flag)
             {
                 Wave wave = this.waveInformation.levelWaves[0];
