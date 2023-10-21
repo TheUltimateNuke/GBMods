@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using Femur;
 
 namespace KnockoutBarsCMT
 {
@@ -6,28 +7,23 @@ namespace KnockoutBarsCMT
     {
         private void Awake()
         {
-            On.Femur.Actor.OnClientStateChange += Actor_OnClientStateChange;
+            CementTools.Modules.HookModule.HookModule.CreateHook(new CementTools.Modules.HookModule.HookModule.CementHook
+            {
+                callingMod = this,
+                original = typeof(Actor).GetEvent(nameof(Femur.Actor.OnActorStateChangedClient)).GetRaiseMethod(),
+                hook = typeof(Plugin).GetMethod(nameof(Plugin.OnClientStateChange)),
+                isPrefix = false
+            }) ;
         }
 
-        private void Actor_OnClientStateChange(On.Femur.Actor.orig_OnClientStateChange orig, Femur.Actor actor, Femur.Actor.ActorState value)
+        private void OnClientStateChange(Actor __instance, Actor.ActorState value)
         {
-            if (value == Femur.Actor.ActorState.Unconscious)
-            { 
-                actor.statusHandeler.displayTimer = float.MaxValue;
-                actor.statusHandeler.showStatusBar = true;
-                actor.statusHandeler.statusBarTransform.gameObject.SetActive(true);
-                actor.statusHandeler.statusBarTransform.Find("healthBarBack").gameObject.SetActive(false);
-                actor.statusHandeler.statusBarTransform.Find("staminaBarBack").gameObject.SetActive(false);
-            }
-            else
-            {
-                actor.statusHandeler.displayTimer = 0f;
-                actor.statusHandeler.showStatusBar = false;
-                actor.statusHandeler.statusBarTransform.gameObject.SetActive(false);
-                actor.statusHandeler.statusBarTransform.Find("healthBarBack").gameObject.SetActive(true);
-                actor.statusHandeler.statusBarTransform.Find("staminaBarBack").gameObject.SetActive(true);
-            }
-
+            bool isUnconsciousFlag = __instance.actorState == value && value == Actor.ActorState.Unconscious;
+            __instance.statusHandeler.displayTimer = float.MaxValue * (isUnconsciousFlag ? 1 : 0);
+            __instance.statusHandeler.showStatusBar = isUnconsciousFlag;
+            __instance.statusHandeler.statusBarTransform.gameObject.SetActive(isUnconsciousFlag);
+            __instance.statusHandeler.statusBarTransform.Find("healthBarBack").gameObject.SetActive(!isUnconsciousFlag);
+            __instance.statusHandeler.statusBarTransform.Find("staminaBarBack").gameObject.SetActive(!isUnconsciousFlag);
         }
     }
 }
