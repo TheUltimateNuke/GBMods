@@ -1,4 +1,5 @@
 ﻿using BepInEx;
+using CementTools;
 using Femur;
 
 namespace KnockoutBarsCMT
@@ -19,6 +20,7 @@ namespace KnockoutBarsCMT
         private void OnClientStateChange(Actor __instance, Actor.ActorState value)
         {
             bool isUnconsciousFlag = __instance.actorState == value && value == Actor.ActorState.Unconscious;
+            Cement.Log("Changed state, now " + isUnconsciousFlag);
             __instance.statusHandeler.displayTimer = float.MaxValue * (isUnconsciousFlag ? 1 : 0);
             __instance.statusHandeler.showStatusBar = isUnconsciousFlag;
             __instance.statusHandeler.statusBarTransform.gameObject.SetActive(isUnconsciousFlag);
