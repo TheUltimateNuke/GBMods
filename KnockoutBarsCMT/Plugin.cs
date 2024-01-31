@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using CementTools;
 using Femur;
+using UnityEngine;
 
 namespace KnockoutBarsCMT
 {
@@ -8,13 +9,7 @@ namespace KnockoutBarsCMT
     {
         private void Awake()
         {
-            CementTools.Modules.HookModule.HookModule.CreateHook(new CementTools.Modules.HookModule.HookModule.CementHook
-            {
-                callingMod = this,
-                original = typeof(Actor).GetEvent(nameof(Femur.Actor.OnActorStateChangedClient)).GetRaiseMethod(),
-                hook = typeof(Plugin).GetMethod(nameof(Plugin.OnClientStateChange)),
-                isPrefix = false
-            }) ;
+            
         }
 
         private void OnClientStateChange(Actor __instance, Actor.ActorState value)

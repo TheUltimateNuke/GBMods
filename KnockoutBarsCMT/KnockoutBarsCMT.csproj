@@ -27,6 +27,9 @@
     <Reference Include="Cement">
       <HintPath>..\..\..\..\..\..\..\SteamLibrary\steamapps\common\Gang Beasts\BepInEx\plugins\Cement\Cement.dll</HintPath>
     </Reference>
+    <Reference Include="MMHOOK_Assembly-CSharp">
+      <HintPath>ref\MMHOOK_Assembly-CSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup>

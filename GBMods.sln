@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockoutBars", "KnockoutBar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockoutBarsCMT", "KnockoutBarsCMT\KnockoutBarsCMT.csproj", "{BBCA349F-30E4-41DD-9DB5-C05709342089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CementSummaryHider", "CementSummaryHider\CementSummaryHider.csproj", "{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CementSummaryHider", "CementSummaryHider\CementSummaryHider.csproj", "{8A4C08FF-D9D3-4442-9DFE-3412CA3D1C6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
