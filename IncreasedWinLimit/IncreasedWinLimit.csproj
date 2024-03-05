@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LavaGang.MelonLoader" Version="0.6.1"></PackageReference>
+    <Reference Include="ref\**\*.dll"></Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ref\" />
+  </ItemGroup>
+
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="D:\SteamLibrary\steamapps\common\Gang Beasts\Mods"> </Copy>
+  </Target>
+</Project>
